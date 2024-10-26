@@ -5,8 +5,9 @@ import Entypo from "@expo/vector-icons/Entypo";
 type props = {
   label: string;
   variant?: "Primary" | "Secondary";
+  onPress?: () => void;
 };
-const Button: FC<props> = ({ label, variant }) => {
+const Button: FC<props> = ({ label, variant, onPress }) => {
   if (variant === "Primary") {
     return (
       <View
@@ -14,7 +15,9 @@ const Button: FC<props> = ({ label, variant }) => {
           styles.buttonContainer,
           { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 },
         ]}>
-        <Pressable style={[styles.button, { backgroundColor: "#fff" }]}>
+        <Pressable
+          onPress={onPress}
+          style={[styles.button, { backgroundColor: "#fff" }]}>
           <Entypo
             name="images"
             size={18}
