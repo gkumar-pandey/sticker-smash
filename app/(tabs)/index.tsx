@@ -15,6 +15,7 @@ import * as MediaLibrary from "expo-media-library";
 import { captureRef } from "react-native-view-shot";
 import { Platform } from "react-native";
 import domtoimage from "dom-to-image";
+import { StatusBar } from "expo-status-bar";
 
 const PlaceholderImage = require("@/assets/images/background-image.png");
 
@@ -135,6 +136,7 @@ export default function Index() {
           onSelect={setPickedEmoji}
         />
       </EmojiPicker>
+      <StatusBar style="light" />
     </GestureHandlerRootView>
   );
 }
